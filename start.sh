@@ -44,6 +44,9 @@ JAVA_XMX="${JAVA_XMX:-4G}"
 [ -n "$JAVA_XMS" ] && JAVA_CMD+=" -Xms$JAVA_XMS"
 [ -n "$JAVA_XMX" ] && JAVA_CMD+=" -Xmx$JAVA_XMX"
 
+# Additional JVM options
+[ -n "$JAVA_CMD_ADDITIONAL_OPTS" ] && JAVA_CMD+=" $JAVA_CMD_ADDITIONAL_OPTS"
+
 # Add AOT cache if enabled
 if [ "$USE_AOT_CACHE" = "true" ] && [ -f "HytaleServer.aot" ]; then
     JAVA_CMD+=" -XX:AOTCache=HytaleServer.aot"

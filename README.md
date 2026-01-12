@@ -73,6 +73,8 @@ You can pass auth tokens to the server. These are **not set by default** and the
   - Adds `-Xms`.
 - `JAVA_XMX` (default: `4G`)
   - Adds `-Xmx`.
+- `JAVA_CMD_ADDITIONAL_OPTS` (optional)
+  - Appends additional JVM args to the `java` command.
 
 ## Notes
 
