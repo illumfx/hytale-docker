@@ -5,6 +5,8 @@ This container downloads/updates the server on startup using the official Hytale
 Once the server runs you have to authorize with Hytale so client connects work.
 Therefore you have to attach to the container `docker attach CONTAINER_NAME` if you use the default docker-compose.yml it's `hytale` and run `auth login device` you will the an authentication link navigating you to the hytale login page, one authenticated clients can connect. to save the authorization so you dont have to do it every restart you can run `auth persistence Encrypted` so it gets saved to an encrypted file.
 
+The command `auth persistence Encrypted` needs the hardware id to be present, see the docker-compose.yml and uncomment the mapping of the hardware id (if your host supports it)
+
 ## Ports
 
 - UDP `5520` (default)
