@@ -2,10 +2,14 @@ Docker setup for running the Hytale dedicated server.
 
 This container downloads/updates the server on startup using the official Hytale Downloader CLI, then starts `HytaleServer.jar` with the options configured via environment variables.
 
+To use the `docker-compose.yml` file you'll need to first copy the ´.env.example` to `.env` and work with `docker-compose up -d` after that.
+
 Once the server runs you have to authorize with Hytale so client connects work.
 Therefore you have to attach to the container `docker attach CONTAINER_NAME` if you use the default docker-compose.yml it's `hytale` and run `auth login device` you will the an authentication link navigating you to the hytale login page, once authenticated clients can connect. To save the authorization so you dont have to do it every restart you can run `auth persistence Encrypted` so it gets saved to an encrypted file.
 
 The command `auth persistence Encrypted` needs the hardware id to be present, see the docker-compose.yml and uncomment the mapping of the hardware id (if your host system supports it, not every linux distro has the machine-id at the same location)
+
+Thanks to @aASDa213ASD this image brings an optional makefile script giving you easy access to commands like build, up, down, restart, status, logs, in, attach, update, update-hytale-downloader through docker-compose commands for easy access.
 
 ## Ports
 
